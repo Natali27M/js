@@ -33,11 +33,15 @@
   let one = 1;
   let two = 3;
   let tree = 6;
-  let choose = two;
+  let choose =two;
   if (choose > one && choose < tree) {
     console.log('Число знаходиться посередині');
+  } else if (choose < two && choose < tree) {
+    console.log('Число знаходиться на початку');
+  }else if (choose > one && choose > two) {
+    console.log('Число знаходиться в кінці');
   } else {
-    console.log('Число не знаходиться між двома іншими');
+    console.log('Я вас не розумію');
   }
 
 
