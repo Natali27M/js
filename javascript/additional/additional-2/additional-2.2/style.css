@@ -1,0 +1,10 @@
+
+.users-box{
+    display: flex;
+    flex-wrap: wrap;
+    width: 1400px;
+}
+.user-block{
+    width:50% ;
+    height:auto;
+}

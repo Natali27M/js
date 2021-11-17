@@ -55,26 +55,25 @@
         age: 1,
         info: 'Ма́ргарет Эвелин «Мэ́гги» Си́мпсон (англ. Margaret Evelyn “Maggie” Simpson) — персонаж мультсериала «Симпсоны». Впервые появилась на телевидении в шоу Трейси Ульман, в короткометражке Good Night (англ.)русск. 19 апреля 1987 года. Мэгги была придумана и разработана карикатуристом Мэттом Грейнингом, пока он ждал встречи с Джеймсом Л. Бруксом. Названа в честь младшей сестры Грейнинга. После появления в шоу Трейси Ульман, через три года семья Симпсонов получила собственный сериал на телеканале Fox, дебют произошёл 17 декабря 1989 года.',
         photo: 'https://upload.wikimedia.org/wikipedia/ru/9/9d/Maggie_Simpson.png'
-    },
+    }
     ];
-    for (i = 0; i < simpsons.length; i++) {
+    for (let i = 0; i < simpsons.length; i++) {
         const simpson = simpsons[i];
         document.write(`<div>${simpson.name}${simpson.surname}${simpson.age}${simpson.info}
 <img src="${simpson.photo}"alt="${simpson.name}"></div>`);
 
     }
     document.write('----------')//Це я для себе,щоб бачити нове завдання
-
-    for (i = 0; i < simpsons.length; i++) {
+    document.write('<div>');
+    for (let i = 0; i < simpsons.length; i++) {
         const simpson = simpsons[i];
-        document.write('<div>');
         document.write('<div>');
         document.write(`<h2>${simpson.name} ${simpson.surname}. age is - ${simpson.age}</h2>`);
         document.write(`<p>${simpson.info}</p>`);
         document.write(`<img src="${simpson.photo}"alt="${simpson.name}">`)
         document.write('</div>');
-        document.write('</div>');
     }
+    document.write('</div>');
     document.write('----------')//Це я для себе,щоб бачити нове завдання
 
 
@@ -103,14 +102,16 @@
         title: 'tea',
         price: 15,
         image: 'https://yogiproducts.com/wp-content/uploads/2009/03/YT-US-CAR-RelaxedMind-C23-202201-V2-3DFront_withGlow-300DPI-1.png'
-    },
+    }
     ];
+    document.write(`<div>`);
     for (i = 0; i < products.length; i++) {
         const product = products[i];
-        document.write(`<div>`);
+
         document.write(`<div>`);
         document.write(`<h3>${product.title}. Price - ${product.price}</h3>`);
         document.write(`<img src="${product.image}"alt="${product.title}">`);
         document.write(`</div>`);
-        document.write(`</div>`);
+
     }
+    document.write(`</div>`);
