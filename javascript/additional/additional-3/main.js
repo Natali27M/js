@@ -60,9 +60,4 @@
 
 
 
-// let usersListElement = usersList;
-// for (let i = 0; i < usersListElement.length; i++) {
-//     const usersListElement = usersList[i];
-//     document.write(`<div class="user-block">`);
-//     document.write(`<h2>${usersListElement.id} - ${usersListElement.name} - ${usersListElement.username}</h2>`)
 
