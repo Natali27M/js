@@ -64,7 +64,7 @@ let numbers = (numberNull) => {
     let temp = [];
     for (let i = 0; i < numberNull.length; i++) {
         if (numberNull[i] === 0) {
-            temp[temp.length-1]=numberNull[i];
+            numberNull[i]=temp[temp.length-1];
         }
     }
     console.log(temp);
