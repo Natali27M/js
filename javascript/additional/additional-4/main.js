@@ -60,14 +60,28 @@
 // [1,0,6,0,3] => [1,6,3,0,0]
 // [0,1,2,3,4] => [1,2,3,4,0]
 // [0,0,1,0]   => [1,0,0,0]
-let numbers = (numberNull) => {
-    let temp = [];
-    for (let i = 0; i < numberNull.length; i++) {
-        if (numberNull[i] === 0) {
-            numberNull[i]=temp[temp.length-1];
+
+let numbers = [0,0,1,0];
+// let numbers = (numberNull) => {
+//            let count = 0;
+//     for (let i = 0; i < numberNull.length; i++)
+//         if (numberNull[i] !==0) numberNull[count++] = numberNull[i];
+//         while (count<numberNull.length) numberNull[count++] = 0;
+//  return   numberNull;
+// }
+// console.log(numbers(number));
+let numberNullEnd=(number)=> {
+    for (let i = 0; i < number.length; i++) {
+        if (number[i] === 0) {
+            for (let j = 0; j < number.length-1; j++) {
+                if (number[j] === 0) {
+                    let temp = number[j];
+                    number[j] = number[j+1];
+                    number[j+1] = temp;
+                }
+            }
         }
     }
-    console.log(temp);
-};
-let number = [0,0,1,0];
-numbers(number);
+    console.log(number)
+}
+numberNullEnd(numbers);
