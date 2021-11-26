@@ -8,7 +8,7 @@
 // some.email@gmail.com
 let mail='someemail@gmail.com';
 let emailValidator = (str) => {
-    if (str.includes('@') && str.indexOf('.') >= 2) {
+    if (str.includes('@')&&str.endsWith('gmail.com') && str.indexOf('.') >= 2) {
         return str;
     } else {
         console.log('Ваш email не валідний');
