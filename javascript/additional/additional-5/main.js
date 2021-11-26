@@ -10,7 +10,7 @@ let mail='someeMAIL@gmail.com';
 let emailValidator = (str) => {
     if (str.includes('@')
         &&str.endsWith('gmail.com')
-        &&str.startsWith('someemail')
+        &&str.toLowerCase().startsWith('someemail')
         && str.indexOf('.') >= 2) {
         return str;
     } else {
