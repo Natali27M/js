@@ -36,9 +36,9 @@
 
 // -   функція Приймає масив та число "i", та міняє місцями об`єкт який знаходиться в індексі "i" на "i+1"
 //   EXAMPLE:
-//    foo([9,8,0,4], 0) // ==> [ 8, 9, 0, 4 ]
-//    foo([9,8,0,4], 1) // ==> [ 9 ,0, 8, 4 ]
-//    foo([9,8,0,4], 2) // ==> [ 9, 8, 4, 0 ]
+//    foo([9,additional-8,0,4], 0) // ==> [ additional-8, 9, 0, 4 ]
+//    foo([9,additional-8,0,4], 1) // ==> [ 9 ,0, additional-8, 4 ]
+//    foo([9,additional-8,0,4], 2) // ==> [ 9, additional-8, 4, 0 ]
 //  let array = (foo, j) => {
 //      let arr = [];
 //      let temp = foo[j];
@@ -49,7 +49,7 @@
 //      foo[j + 1] = temp;
 //       console.log(arr);
 //  };
-//  let foo = [9, 8, 0, 4];
+//  let foo = [9, additional-8, 0, 4];
 //  array(foo, 0);
 
 

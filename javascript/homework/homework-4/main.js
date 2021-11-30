@@ -27,7 +27,7 @@
 
 
 // - створити функцію яка приймає масив та виводить кожен його елемент
-// let number = [3, 'hello', 8, 0, true];
+// let number = [3, 'hello', additional-8, 0, true];
 // function array (number) {
 //     for (i = 0; i < number.length; i++) {
 //         console.log(number[i]);

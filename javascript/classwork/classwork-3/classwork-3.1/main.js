@@ -73,7 +73,7 @@ for (let index3 = 0; index3 < numbers.length; index3++) {
 document.write('----------')//Це я для себе,щоб бачити нове завдання
 
 
-//    8. вивести масив в зворотньому порядку.
+//    additional-8. вивести масив в зворотньому порядку.
 for (let index4 = numbers.length - 1; index4 >= 0; index4--) {
     const numbersElements = numbers[index4];
     document.write(`<div>`);
@@ -83,7 +83,7 @@ for (let index4 = numbers.length - 1; index4 >= 0; index4--) {
 document.write('----------')//Це я для себе,щоб бачити нове завдання
 
 
-//    9. всі попередні завдання (окрім 8), але в зворотньому циклі (с заду на перед)
+//    9. всі попередні завдання (окрім additional-8), але в зворотньому циклі (с заду на перед)
 //    9.1. перебрати його циклом while,але в зворотньому циклі
 let num2 = numbers.length - 1;
 while (num2 >= 0) {

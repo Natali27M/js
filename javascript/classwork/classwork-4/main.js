@@ -39,7 +39,7 @@
 
 
 // - створити функцію яка повертає найменьше число з масиву
-//  let number = [8, 142, 10, 12, 1001];
+//  let number = [additional-8, 142, 10, 12, 1001];
 // function min() {
 //     let min = number [0];
 //     for (const element of number) {
@@ -99,7 +99,7 @@
 //     console.log(max);
 //     return min;
 // }
-// console.log(comparison(12,6,-8,100));
+// console.log(comparison(12,6,-additional-8,100));
 
 
 // - створити функцію яка заповнює масив рандомними числами
