@@ -1,127 +1,64 @@
-
-card2 = getCardOption(2);
-function getCardOption(key) {
-        let balance = 100;
-        let transactionLimit = 100;
-        let time = 11.30;
-
-
-        card1= {
-            balance: balance,
-            transactionLimit: transactionLimit,
-            historyLogs: [{
-                // operationType :
-
-            }, {
-                credit: balance
-            }, {
-                operationTime: time
-            }],
-            key: key,
-            putCredit: function (putFunds) {
-                balance = `${card1.balance = balance + putFunds}`;
-                return card1.balance;
-            },
-            takeCredit: function (takeFunds) {
-                balance = `${card1.balance = balance - takeFunds}`;
-                return card1.balance;
-            },
-            setTransactionLimit: function (newLimit) {
-                card1.transactionLimit = newLimit;
-                return transactionLimit;
-            },
-            transferCredits: function (summa, numberCard) {
-                if (card1.balance > summa && summa <= card1.transactionLimit) {
-                    balance = `${card1.balance = (balance - summa - (summa * 0.005))}`;
-                    return card1.balance;
-                }
-            }
+function card(key,balance,limit) {
+    this.key = function (key) {
+        if (key === 1) {
+            return card1;
+        }else if (key === 2) {
+            return card2;
         }
-    return card1,
-    card2= {
-        balance: balance,
-        transactionLimit: transactionLimit,
-        historyLogs: [{
-            // operationType :
+    };
+    this.balance = balance;
+    this.limit = limit;
+    this.historyLogs = function () {
+       let history = [];
+        for (const historyElement of whats) {
 
-        }, {
-            credit: balance
-        }, {
-            operationTime: time
-        }],
-        key: key,
-        putCredit: function (putFunds) {
-            balance = `${card2.balance = balance + putFunds}`;
-            return card2.balance;
-        },
-        takeCredit: function (takeFunds) {
-            balance = `${card2.balance = balance - takeFunds}`;
-            return card2.balance;
-        },
-        setTransactionLimit: function (newLimit) {
-            card2.transactionLimit = newLimit;
-            return transactionLimit;
-        },
-        transferCredits: function (summa, numberCard) {
-            if (card2.balance > summa && summa <= card2.transactionLimit) {
-                balance = `${card2.balance = (balance - summa - (summa * 0.005))}`;
-                return card2.balance;
-            }
         }
-    }
-    return card2
-
-    //     card3= {
-    //     balance: balance,
-    //     transactionLimit: transactionLimit,
-    //     historyLogs: [{
-    //         // operationType :
-    //
-    //     }, {
-    //         credit: balance
-    //     }, {
-    //         operationTime: time
-    //     }],
-    //     key: key,
-    //     putCredit: function (putFunds) {
-    //         balance = `${card3.balance = balance + putFunds}`;
-    //         return card3.balance;
-    //     },
-    //     takeCredit: function (takeFunds) {
-    //         balance = `${card3.balance = balance - takeFunds}`;
-    //         return card3.balance;
-    //     },
-    //     setTransactionLimit: function (newLimit) {
-    //         card3.transactionLimit = newLimit;
-    //         return transactionLimit;
-    //     },
-    //     transferCredits: function (summa, numberCard) {
-    //         if (card3.balance > summa && summa <= card3.transactionLimit) {
-    //             balance = `${card3.balance = (balance - summa - (summa * 0.005))}`;
-    //             return card3.balance;
-    //         }
-    //     }
-    // }
-    // return card3
-
+    };
+    this.putCredit = function (putCredit) {
+        if (putCredit <= this.limit) {
+            return `${this.balance = this.balance + putCredit}`;
+        } else {
+            return `Ви перевищили ліміт `;
+        }
+    };
+    this.takeCredit = function (takeCredit) {
+        if (takeCredit <= this.limit) {
+            return `${this.balance = this.balance - takeCredit}`;
+        } else {
+            return `Ви перевищили ліміт `;
+        }
+    };
+    this.transactionLimit = function (newTransactionLimit) {
+        return `${this.limit = newTransactionLimit}`;
+    };
+    this.transferCredits = function (summa, numberCard) {
+        if (this.balance > summa && summa <= this.limit) {
+            return `${this.balance = (this.balance - summa - (summa * 0.005))}`;
+        } else {
+            return `Ви перевищили ліміт `;
+        }
+    };
 
 }
 
-// card1.putCredit(300)
-// card1.takeCredit(100)
-// card1.setTransactionLimit(5000)
-// card1.transferCredits(100,456904332);
-// console.log(card1);
+let card1 =new card(1,100, 500);
+console.log(card1.putCredit(500));
+console.log(card1.takeCredit(200));
+console.log(card1.transactionLimit(1000));
+console.log(card1.transferCredits(300, 3727287));
+console.log(card1.historyLogs);
+console.log(card1);
 
-card2.putCredit(5000)
-card2.takeCredit(1000)
-card2.setTransactionLimit(5000)
-card2.transferCredits(1000,456904332);
+// let card2 =new card(2,100, 500);
+// console.log(card2.putCredit(1500));
+// console.log(card2.takeCredit(500));
+// console.log(card2.transactionLimit(2000));
+// console.log(card2.transferCredits(500, 3727287));
+// console.log(card2.historyLogs);
+// console.log(card2);
 
-console.log(card2);
 
-// card3.putCredit(300)
-// card3.takeCredit(100)
-// card3.setTransactionLimit(5000)
-// card3.transferCredits(100,456904332);
-// console.log(card3);
+
+
+
+
