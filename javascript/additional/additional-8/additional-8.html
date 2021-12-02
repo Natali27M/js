@@ -49,20 +49,31 @@
 
 <script>
   // написати рекурсивну функцію, яка збирає всі назви класів з файлу rules.html в окремий масив. масив вивести в консоль
-   function reCall(startElement) {
-     let allRules = [];
-       for (const element of startElement) {
-         if (element.children) {
-           allRules.push(...reCall(element.children));
-         }
-          allRules.push(...element.classList);
-       }
-     return allRules
-   }
- let result =  reCall(document.body.children)
-  console.log(result);
-
-
+ //   function reCall(startElement) {
+ //     let allRules = [];
+ //       for (const element of startElement) {
+ //         if (element.children) {
+ //           allRules.push(...reCall(element.children));
+ //         }
+ //          allRules.push(...element.classList);
+ //       }
+ //     return allRules
+ //   }
+ // let result =  reCall(document.body.children)
+ //  console.log(result);
+   allClass = [];
+function reCall(startElement) {
+  if (startElement.children.length) {
+    for (const element of startElement.children) {
+       reCall(element)
+      if (element.classList) {
+        allClass.push(element)
+      }
+      }
+  }
+}
+  reCall(document.body);
+  console.log(allClass)
 </script>
 
 </body>
