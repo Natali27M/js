@@ -9,11 +9,10 @@ function card(key,balance,limit) {
     this.balance = balance;
     this.limit = limit;
     this.historyLogs = function () {
-    //    let history = [this.putCredit()];
-        // for (const historyElement of whats) {
-        //
-        // }
-     };
+        let history = [];
+         return history;
+       };
+
     this.putCredit = function (putCredit) {
         if (putCredit <= this.limit) {
             return `${this.balance = this.balance + putCredit}`;
@@ -45,7 +44,6 @@ let card1 =new card(1,100, 500);
 console.log(card1.transactionLimit(1000));
 console.log(card1.putCredit(500));
 console.log(card1.takeCredit(200));
-// console.log(card1.transactionLimit(1000));
 console.log(card1.transferCredits(300, 3727287));
 console.log(card1.historyLogs);
 console.log(card1);
