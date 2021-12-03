@@ -8,7 +8,8 @@ function card(key,balance,limit) {
     };
     this.balance = balance;
     this.limit = limit;
-    this.historyLogs=[{operationType:balance}]
+
+    this.historyLogs=[{operationType:this.balance},{credit:balance},{operationTime:new Date()}]
     // this.historyLogs = function () {
     //     let history = [];
        //   function data() {
@@ -63,7 +64,15 @@ console.log(card2.historyLogs);
 console.log(card2);
 
 
+class UserAccount {
+    constructor(name) {
+        this.name = name;
+        this.cards = [card1, card2];
+    }
+}
 
+let userAccount = new UserAccount("Natalya");
+console.log(userAccount);
 
 
 
