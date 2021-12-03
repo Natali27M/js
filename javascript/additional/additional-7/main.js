@@ -8,10 +8,16 @@ function card(key,balance,limit) {
     };
     this.balance = balance;
     this.limit = limit;
-    this.historyLogs = function () {
-        let history = [];
-         return history;
-       };
+    this.historyLogs=[{operationType:balance}]
+    // this.historyLogs = function () {
+    //     let history = [];
+       //   function data() {
+       //       let newData=new data(this.putCredit())
+       //       history.push(newData)
+       //       return newData
+       //   }
+       //   return history;
+       // };
 
     this.putCredit = function (putCredit) {
         if (putCredit <= this.limit) {
