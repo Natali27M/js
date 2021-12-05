@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Title</title>
+</head>
+<style>
+
+</style>
+<body>
+
+<!--Завдання 1-->
+<!--<form action="" name="form">-->
+<!--  <label>Ваше ім'я-->
+<!--    <input type="text" name="name">-->
+<!--  </label>-->
+<!--  <label>Ваше прізвище-->
+<!--    <input type="text" name="surname">-->
+<!--  </label>-->
+<!--</form>-->
+<!--<form action="" name="form">-->
+<!--  <label>Ваш вік-->
+<!--    <input type="number" name="age">-->
+<!--  </label>-->
+<!--  <label>Ваше місто-->
+<!--    <input type="text" name="city">-->
+<!--  </label>-->
+<!--</form>-->
+<!--<button class="btn">Пуск</button>-->
+
+
+<!--Завдання 2-->
+<!--<form action="" name="table">-->
+<!--  <label>Кількість рядків-->
+<!--    <input type="number" name="row">-->
+<!--  </label>-->
+<!--  <label>Кількість стовпців-->
+<!--    <input type="number" name="column">-->
+<!--  </label>-->
+<!--  <label>Текст комірки-->
+<!--    <input type="text" name="text">-->
+<!--  </label>-->
+<!--</form>-->
+<!--<button class="btn">Створити таблицю</button>-->
+
+
+<!--Завдання3-->
+<!--<form action="">-->
+<!--  <label>Введіть слово-->
+<!--    <input type="text" name="word">-->
+<!--  </label>-->
+<!--</form>-->
+<!--<button class="btn">Пуск</button>-->
+
+
+<!--Завдання 4-->
+<form action="" name="text">
+  <h4>Напишіть текст</h4>
+  <label>
+    <input type="text" name="words">
+  </label>
+</form>
+<button class="btn">Пуск</button>
+
+
+
+<script>
+
+
+  // - створити 2 форми  по 2 інпути в кожній. ствоирити кнопку при кліку на яку считується та виводиться на консоль
+  // інформація з цих 2х форм.
+  //         Кнопка повинна лежати за межами форм (Щоб ьуникнути  перезавантаження сторінки)
+  // Доступ до інпутів через Forms API. Отже дайте формі та інпутам всі необхідні атрибути.
+  // let button = document.getElementsByClassName('btn');
+  // let forms = document.getElementsByName('form');
+  // button[0].addEventListener('click', function () {
+  //   console.log(forms[0].name.value);
+  //   console.log(forms[0].surname.value);
+  //   console.log(forms[1].age.value);
+  //   console.log(forms[1].city.value);
+  // });
+
+
+
+  // - Створити 3 инпута та кнопку. Один визначає кількість рядків, другий - кількість ячеєк, третій вмиіст ячеєк.
+  //         При натисканні кнопки, вся ця інформація зчитується і формується табличка, з відповідним вмістом.
+  // (Додатковачастина для завдання)
+  // let form = document.getElementsByName('table');
+  // let button = document.getElementsByClassName('btn');
+  //
+  // button[0].onclick = function () {
+  //   form[0].style.display = 'none';
+  //   button[0].style.display = 'none';
+  //   let table = document.createElement('table');
+  //   document.body.appendChild(table);
+  //   table.style.border = '1px solid black';
+  //   for (let i = 0; i < form[0].row.value; i++) {
+  //     let td = document.createElement('td');
+  //     table.appendChild(td);
+  //     td.innerText = form[0].text.value;
+  //     td.style.border = '1px solid black';
+  //     for (let j = 0; j < form[0].column.value; j++) {
+  //       let tr = document.createElement('tr');
+  //       td.appendChild(tr);
+  //       tr.innerText = form[0].text.value;
+  //       tr.style.border = '1px solid black';
+  //       // tr.style.background='red'
+  //     }
+  //   }
+  // };
+
+
+
+
+  // - Сворити масив не цензцрних слів.
+  //         Сворити інпут текстового типу.
+  //         Якщо людина вводить слово і воно міститься в масиві не цензурних слів
+  // кинути алерт з попередженням.
+  //         Перевірку робити при натисканні на кнопку
+  // let word = document.getElementsByName('word');
+  // let button = document.getElementsByClassName('btn');
+  // button[0].onclick=function () {
+  //   let swearWords = ['жопа', 'хрєн', 'піпєц', 'дибіл', 'путін'];
+  //   for (const swearWord of swearWords) {
+  //     if (word[0].value === swearWord) {
+  //       alert('Ви ввели нецензурне слово');
+  //     }
+  //   }
+  // }
+
+
+
+  //
+  // - Сворити масив не цензцрних слів.
+  //         Сворити інпут текстового типу.
+  //         Потрібно перевіряти чи не містить ціле речення в собі погані слова.
+  //         Кинути алерт з попередженням у випадку якщо містить.
+  //         Перевірку робити при натисканні на кнопку
+  let words = document.getElementsByName('words');
+  let button = document.getElementsByClassName('btn');
+  button[0].onclick=function () {
+    let text = words[0].value;
+    let slice = text.split(' ');
+    for (const sliceElement of slice) {
+      let swearWords = ['жопа', 'хрєн', 'піпєц', 'дибіл', 'путін'];
+      for (const swearWord of swearWords) {
+        if (swearWord === sliceElement) {
+          alert('Ви ввели нецензурне слово');
+        }
+      }
+    }
+  }
+
+</script>
+</body>
+</html>

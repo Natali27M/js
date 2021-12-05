@@ -1,31 +1,21 @@
+
 function card(key,balance,limit) {
-    this.key = function (key) {
-        if (key === 1) {
-            return card1;
-        }else if (key === 2) {
-            return card2;
-        }
-    };
     this.balance = balance;
     this.limit = limit;
-
-    this.historyLogs=[{operationType:this.balance},{credit:balance},{operationTime:new Date()}]
-    // this.historyLogs = function () {
-    //     let history = [];
-       //   function data() {
-       //       let newData=new data(this.putCredit())
-       //       history.push(newData)
-       //       return newData
-       //   }
-       //   return history;
-       // };
-
+    this.historyLog = [];
+    // this.addHistoryLog = function (putCredit) {
+    //     let put=this.putCredit()
+    //     let take=this.takeCredit()
+    //     this.historyLog.push({put,take})
+    // };
     this.putCredit = function (putCredit) {
+        this.receivedCredit={operationType:'Received credit',credit:putCredit}
         if (putCredit <= this.limit) {
             return `${this.balance = this.balance + putCredit}`;
         } else {
             return `Ви перевищили ліміт `;
         }
+        // this.historyLog.push(this.receivedCredit)
     };
     this.takeCredit = function (takeCredit) {
         if (takeCredit <= this.limit) {
@@ -46,13 +36,13 @@ function card(key,balance,limit) {
     };
 
 }
-
 let card1 =new card(1,100, 500);
 console.log(card1.transactionLimit(1000));
 console.log(card1.putCredit(500));
+console.log(card1.receivedCredit)
 console.log(card1.takeCredit(200));
 console.log(card1.transferCredits(300, 3727287));
-console.log(card1.historyLogs);
+console.log(card1.historyLog);
 console.log(card1);
 
 let card2 =new card(2,100, 500);
@@ -60,19 +50,41 @@ console.log(card2.transactionLimit(2000));
 console.log(card2.putCredit(1500));
 console.log(card2.takeCredit(500));
 console.log(card2.transferCredits(500, 3727287));
-console.log(card2.historyLogs);
+console.log(card2.historyLog);
 console.log(card2);
+
+let card3 =new card(3,100, 500);
+console.log(card3.transactionLimit(3000));
+console.log(card3.putCredit(1000));
+console.log(card3.takeCredit(700));
+console.log(card3.transferCredits(200, 3727287));
+console.log(card3.historyLog);
+console.log(card3);
+
 
 
 class UserAccount {
     constructor(name) {
         this.name = name;
-        this.cards = [card1, card2];
+        this.cards = [];
+        this.addCard = function () {
+            if (this.cards.length > 3) {
+                return 'Не можна додавати більше трьох карток';
+            } else {
+                return this.cards
+            }
+        }
+        this.cards.push(new card(1, 100, 500));
+        // this.cards.push(new card(2, 100, 500));
+        // this.cards.push(new card(3, 100, 500));
+        // this.cards.push(new card(3, 100, 500));
+        this.cards[0] = card1;
+        this.cards[1] = card2;
+        this.cards[2] = card3;
     }
 }
-
 let userAccount = new UserAccount("Natalya");
 console.log(userAccount);
-
+console.log(userAccount.addCard());
 
 

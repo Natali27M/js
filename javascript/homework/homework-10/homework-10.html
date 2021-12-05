@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Title</title>
+</head>
+<style>
+  /*Завдання 4*/
+  /*.menu {*/
+  /*    display: flex;*/
+  /*    flex-direction: column;*/
+  /*    width: 500px;*/
+  /*    height: 500px;*/
+  /*    background: aqua;*/
+  /*    text-align: center;*/
+  /*}*/
+  /*.menuNone {*/
+  /*    width: 500px;*/
+  /*    height: 100px;*/
+  /*    background: aqua;*/
+  /*    text-align: center;*/
+  /*    display: none;*/
+  /*}*/
+</style>
+<body>
+
+<!--Завдання 1-->
+<!--<h1 id="text">Text</h1>-->
+<!--<button class="btn">btn</button>-->
+
+
+<!--Завдання 2-->
+<!--<button class="button">button</button>-->
+
+
+<!--Завдання 3-->
+<!--<label>Скільки вам років-->
+<!--  <input type="text" id="age">-->
+<!--</label>-->
+<!--<button class="button">Пуск</button>-->
+
+
+<!--Завдання 4-->
+<!--<div class="menu">-->
+<!--    <h1>Menu</h1>-->
+<!--    <h2>Перша страва</h2>-->
+<!--    <h2>Друга страва</h2>-->
+<!--    <h2>Компот</h2>-->
+<!--</div>-->
+<!--<div class="menuNone">-->
+<!--    <h1 class="title">Menu</h1>-->
+<!--</div>-->
+
+
+
+<script>
+// Завдання 1
+  // - Создать произвольный елемент с id = text.  Используя JavaScript, сделайте так, чтобы при клике на кнопку исчезал
+  // элемент с id="text".
+  // let text = document.getElementById('text');
+  // let button = document.getElementsByTagName('button');
+  // button[0].onclick = function () {
+  //   text.style.display = 'none';
+  // };
+
+
+// Завдання 2
+  // - Создайте кнопку, при клике на которую, она будет скрывать сама себя.
+  // let button = document.getElementsByClassName('button');
+  // button[0].onclick=function () {
+  //   button[0].style.display = 'none';
+  // }
+
+
+// Завдання 3
+  // - створити інпут який приймає вік людини та кнопку яка підтверджує дію.При натисканні на кнопку зчитати інформацію
+  // з інпуту та перевірити вік чи меньше він ніж 18, та повідомити про це користувача
+// let number=document.getElementsByClassName('button')
+//   number[0].onclick=function () {
+//     let age = document.getElementById('age').value;
+//     if (age>=18) {
+//       document.write('Ви достатньо дорослі');
+//     }else if (age < 18) {
+//       document.write('Ви ще не достатньо дорослі');
+//     } else {
+//       document.write('Ви ввели не правильне значення');
+//     }
+//   }
+
+
+// Завдання 4
+  // - Создайте меню, которое раскрывается/сворачивается при клике
+ //  let menu = document.getElementsByClassName('menu');
+ //  let menuNone = document.getElementsByClassName('menuNone');
+ //  let title = document.getElementsByClassName('title');
+ //  menu[0].onclick=function () {
+ //      menu[0].style.display = 'none';
+ //      menuNone[0].style.display = 'flex';
+ //      title[0].style.marginLeft = '200px';
+ // }
+ // menuNone[0].onclick=function () {
+ //     menuNone[0].style.display = 'none';
+ //     menu[0].style.display = 'flex';
+ // }
+
+
+// Завдання 5
+  // - Создать список комментариев , пример объекта коментария - {title : 'lorem', body:'lorem ipsum dolo sit ameti'}.
+  //         Вывести список комментариев в документ, каждый в своем блоке.
+  //         Добавьте каждому комментарию по кнопке для сворачивания его body.
+  let comments = [
+      {
+          title: 'Буряк',
+          body: ' рід одно-, дво- і багаторічних трав*янистих рослин родини амарантові (раніше рід належав до' +
+              ' родини лободові). Зустрічається на всіх континентах, окрім Антарктиди.'
+      },
+      {
+          title: 'Морква',
+          body: 'їстівний коренеплід моркви посівної, багатий на вітаміни та мікроелементи. За змістом каротину ' +
+              'морква поступається лише солодкому перцю.'
+      },
+      {
+          title: 'Картопля',
+          body: ' вид рослин родини пасльонових, поширена сільськогосподарська культура, яку в народі' +
+              ' називають «другим хлібом»'
+      }
+  ];
+  for (const comment of comments) {
+      let div = document.createElement('div');
+      let h2 = document.createElement('h2');
+      let p = document.createElement('p');
+      let button = document.createElement('button');
+
+      document.body.appendChild(div)
+      div.appendChild(h2);
+      div.appendChild(p);
+      div.appendChild(button);
+      h2.innerText = comment.title;
+      p.innerText = comment.body;
+      button.textContent = 'Пуск';
+
+      button.onmousedown = function () {
+          p.style.display = 'none';
+      };
+      button.onclick = function () {
+          p.style.display = 'flex';
+      };
+
+  }
+
+</script>
+</body>
+</html>
