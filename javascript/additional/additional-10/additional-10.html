@@ -195,11 +195,11 @@
 // Завдання 5
 // - Напишите «Карусель» – ленту изображений, которую можно листать влево-вправо нажатием на стрелочки.
 // * этот код помечает картинки, для удобства разработки */
+
 let prev = document.getElementsByClassName('prev');
 let next = document.getElementsByClassName('next');
 let images = document.getElementsByTagName('img');
 images[0].style.display = 'flex';
-
 i = 1;
 j = 0;
 next[0].onclick = function () {
@@ -210,13 +210,12 @@ next[0].onclick = function () {
 };
 q = 4;
 g = 3;
-prev[0].onclick=function () {
+prev[0].onclick = function () {
     images[q].style.display = 'none';
     images[g].style.display = 'flex';
     q--;
     g--;
-}
-
+};
 
 
 //         Завдання важке для розуміння, але дуже легке в реалізації. Тут треба буде погуглити
