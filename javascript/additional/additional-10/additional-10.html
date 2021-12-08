@@ -1,50 +1,293 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport"
-        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Title</title>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Title</title>
+    <style>
+        /*Завдання 2*/
+        /*.popup {*/
+        /*  width: 250px;*/
+        /*  height: 100px;*/
+        /*  background: silver;*/
+        /*  font-size: 20px;*/
+        /*  display: none;*/
+        /*}*/
+
+        /*Завдання 5*/
+        .gallery {
+          width: 1200px;
+          height: 800px;
+          background: silver;
+          display: flex;
+          align-items: center;
+        }
+        img {
+          width: 100%;
+          height: 100%;
+          display: none;
+        }
+
+    </style>
+
 </head>
+
 <body>
+
+<!--Завдання 1 і 2-->
+<!--<div class="popup"></div>-->
+<!--<div id="div1">-->
+<!--  <h1 class="header1">text</h1>-->
+<!--  <p class="paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus, laudantium.</p>-->
+<!--</div>-->
+<!--<div id="div2">-->
+<!--  <h1 class="header1">text</h1>-->
+<!--  <p class="paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus, laudantium.</p>-->
+<!--</div>-->
+<!--<div id="div3">-->
+<!--  <h1 class="header1">text</h1>-->
+<!--  <p class="paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus, laudantium.</p>-->
+<!--</div>-->
+<!--<ul class="list">-->
+<!--  <li>item</li>-->
+<!--  <li>item</li>-->
+<!--  <li>item</li>-->
+<!--  <li>item</li>-->
+<!--</ul>-->
+
+
+<!--Завдання 5-->
+<div id="carousel" class="carousel">
+  <button class="next">⇦</button>
+  <div class="gallery">
+      <img src="img/1.png" alt="mountains">
+      <img src="img/2.png" alt="sunset">
+      <img src="img/3.png" alt="art">
+      <img src="img/4.png" alt="hi-tech">
+      <img src="img/5.png" alt="sea">
+  </div>
+  <button class="prev">⇨</button>
+</div>
+
 <script>
-  // - Описати скріпт, котрий, якщо доєднати до будь-якої сторінки дозволить зробити наступне:
-  //         При лівому кліку миші вивести в консоль інформацію про блок або елемент на який відбувся клік.
-  //         Інформація яку потрібно вивести: Назва тегу, список класів, список ід, розміри в форматі висота*ширина
-  //
-  // - Описати скріпт, котрий, якщо доєднати до будь-якої сторінки дозволить зробити наступне:
-  //         При лівому кліку миші  зробить popup (спливаючий блок) в якому буде вся інформація про блок.
-  //         Інформація яку потрібно вивести в popup: Назва тегу, список класів, список ід, розміри в форматі висота*ширина
-  //
-  // -- взять массив пользователей
-  // let usersWithAddress = [
-  //   {id:1,name: 'vasya', age: 31, status: false, address: {city: 'Lviv', street: 'Shevchenko', number: 16}},
-  //   {id:2,name: 'petya', age: 30, status: true, address: {city: 'Kyiv', street: 'Shevchenko', number: 1}},
-  //   {id:3,name: 'kolya', age: 29, status: true, address: {city: 'Lviv', street: 'Shevchenko', number: 121}},
-  //   {id:4,name: 'olya', age: 28, status: false, address: {city: 'Ternopil', street: 'Shevchenko', number: 90}},
-  //   {id:5,name: 'max', age: 30, status: true, address: {city: 'Lviv', street: 'Shevchenko', number: 115}},
-  //   {id:6,name: 'anya', age: 31, status: false, address: {city: 'Kyiv', street: 'Shevchenko', number: 2}},
-  //   {id:7,name: 'oleg', age: 28, status: false, address: {city: 'Ternopil', street: 'Shevchenko', number: 22}},
-  //   {id:8,name: 'andrey', age: 29, status: true, address: {city: 'Lviv', street: 'Shevchenko', number: 43}},
-  //   {id:9,name: 'masha', age: 30, status: true, address: {city: 'Kyiv', street: 'Shevchenko', number: 12}},
-  //   {id:10,name: 'olya', age: 31, status: false, address: {city: 'Lviv', street: 'Shevchenko', number: 16}},
-  //   {id:11,name: 'max', age: 31, status: true, address: {city: 'Ternopil', street: 'Shevchenko', number: 121}}
-  // ];
-  // - Создать три чекбокса. Каждый из них активирует фильтр для вышеуказаного массива. Фильтры могут работать как вместе так и по отдельности.
-  // 1й - отфильтровывает пользователей со статусом false (осталяет со статусом false)
-  // 2й - оставляет старше 29 лет включительно
-  // 3й - оставляет тех у кого город киев
-  // Данные выводить в документ
-  //
-  //
-  //
-  //         Завдання важке для розуміння, але дуже легке в реалізації. Тут треба буде погуглити
-  // *** При виділені сегменту тексту на сторінці він стає жирний/курсивний/або якось іншим способом змінює свій стан
-  // *****(Прям овердоз с рекурсией) Создать функцию которая принимает какой-либо элемент DOM-структуры .Функция создает в боди 2 кнопки (назад/вперед)
-  // при нажатии вперед, вы переходите к дочернему элементу, при еще одном нажатии на "вперед", вы переходите к следующему дочернему элементу (лежащему на одном уровне)
-  // НО если у (какого-либо)дочеренего элемента есть дети, то нажатие "вперед" позволяет нам войти внутрь элемента и  выводит первого ребенка. и тд.
-  //         Когда все дети заканчиваются, мы выходим из данного дочернего элемента и переходим к следующему, лежащему с ним на одном уровне
+// Завдання1
+// - Описати скріпт, котрий, якщо доєднати до будь-якої сторінки дозволить зробити наступне:
+//         При лівому кліку миші вивести в консоль інформацію про блок або елемент на який відбувся клік.
+//         Інформація яку потрібно вивести: Назва тегу, список класів, список ід, розміри в форматі висота*ширина
+
+// document.body.onclick = function (e) {
+//     console.log(e.target.localName, e.target.id, e.target.classList.value, e.target.offsetWidth, e.target.offsetHeight)
+// };
+
+
+// Завдання 2
+// - Описати скріпт, котрий, якщо доєднати до будь-якої сторінки дозволить зробити наступне:
+//   При лівому кліку миші  зробить popup (спливаючий блок) в якому буде вся інформація про блок.Інформація яку
+//   потрібно вивести в popup: Назва тегу, список класів, список ід, розміри в форматі висота*ширина
+
+// document.body.onclick = function (e) {
+//     let pop = document.getElementsByClassName('popup');
+//     pop[0].style.display = 'flex';
+//     pop[0].style.width = '250px';
+//     pop[0].style.height = '100px';
+//     pop[0].style.background = 'silver';
+//     pop[0].style.fontSize = '20px';
+//     pop[0].textContent = (`Tag - ${e.target.localName} , Id - ${e.target.id} , Class - ${e.target.classList.value},
+//     Width - ${e.target.offsetWidth} , Height -  ${e.target.offsetHeight}`);
+// };
+
+
+
+// Завдання3
+// -- взять массив пользователей
+//
+// let usersWithAddress = [
+//   {id:1,name: 'vasya', age: 31, status: false, address: {city: 'Lviv', street: 'Shevchenko', number: 16}},
+//   {id:2,name: 'petya', age: 30, status: true, address: {city: 'Kyiv', street: 'Shevchenko', number: 1}},
+//   {id:3,name: 'kolya', age: 29, status: true, address: {city: 'Lviv', street: 'Shevchenko', number: 121}},
+//   {id:4,name: 'olya', age: 28, status: false, address: {city: 'Ternopil', street: 'Shevchenko', number: 90}},
+//   {id:5,name: 'max', age: 30, status: true, address: {city: 'Lviv', street: 'Shevchenko', number: 115}},
+//   {id:6,name: 'anya', age: 31, status: false, address: {city: 'Kyiv', street: 'Shevchenko', number: 2}},
+//   {id:7,name: 'oleg', age: 28, status: false, address: {city: 'Ternopil', street: 'Shevchenko', number: 22}},
+//   {id:8,name: 'andrey', age: 29, status: true, address: {city: 'Lviv', street: 'Shevchenko', number: 43}},
+//   {id:9,name: 'masha', age: 30, status: true, address: {city: 'Kyiv', street: 'Shevchenko', number: 12}},
+//   {id:10,name: 'olya', age: 31, status: false, address: {city: 'Lviv', street: 'Shevchenko', number: 16}},
+//   {id:11,name: 'max', age: 31, status: true, address: {city: 'Ternopil', street: 'Shevchenko', number: 121}}
+//  ];
+
+// // - Создать три чекбокса. Каждый из них активирует фильтр для вышеуказаного массива. Фильтры могут работать как
+// // вместе так и по отдельности.
+// // 1й - отфильтровывает пользователей со статусом false (осталяет со статусом false)
+// // 2й - оставляет старше 29 лет включительно
+// // 3й - оставляет тех у кого город киев
+// // Данные выводить в документ
+
+// let divCheck = document.createElement('div');
+// document.body.appendChild(divCheck);
+// let button = document.createElement('button');
+// divCheck.appendChild(button);
+// button.innerText = 'Пуск';
+// let checkbox1= document.createElement('input');
+//  checkbox1.type = 'checkbox';
+//  divCheck.appendChild(checkbox1);
+//  let checkbox2= document.createElement('input');
+//  checkbox2.type = 'checkbox';
+//  divCheck.appendChild(checkbox2);
+//  let checkbox3= document.createElement('input');
+//  checkbox3.type = 'checkbox';
+//  divCheck.appendChild(checkbox3);
+
+
+
+ //
+ // button.onclick=function () {
+ //     let users=[]
+ //     if (checkbox1.checked && checkbox2.checked && checkbox3.checked) {
+ //         users=usersWithAddress.filter(value =>!value.status && value.age >= 29 && value.address.city==='Kyiv');
+ //         console.log(users);
+ //     }else if (checkbox1.checked && checkbox2.checked) {
+ //         users = usersWithAddress.filter(value => !value.status && value.age >= 29);
+ //         console.log(users);
+ //     }else if (checkbox2.checked && checkbox3.checked) {
+ //         users=usersWithAddress.filter(value => value.age >= 29  &&  value.address.city==='Kyiv');
+ //         console.log(users);
+ //     }else if (checkbox1.checked && checkbox3.checked) {
+ //         users = usersWithAddress.filter(value => !value.status && value.address.city === 'Kyiv');
+ //         console.log(users);
+ //     }else if (checkbox1.checked) {
+ //         users = usersWithAddress.filter(value => !value.status);
+ //         console.log(users);
+ //     }else if (checkbox2.checked) {
+ //         users = usersWithAddress.filter(value => value.age >= 29);
+ //         console.log(users);
+ //     }else if (checkbox3.checked) {
+ //         users = usersWithAddress.filter(value => value.address.city === 'Kyiv');
+ //         console.log(users);
+ //     }
+ // }
+
+// let divCheck = document.createElement('div');
+// document.body.appendChild(divCheck);
+// let checkbox1= document.createElement('input');
+//  checkbox1.type = 'checkbox';
+//  divCheck.appendChild(checkbox1);
+//  let checkbox2= document.createElement('input');
+//  checkbox2.type = 'checkbox';
+//  divCheck.appendChild(checkbox2);
+//  let checkbox3= document.createElement('input');
+//  checkbox3.type = 'checkbox';
+//  divCheck.appendChild(checkbox3);
+//
+//
+// checkbox1.onclick = function (ev) {
+//     ev.preventDefault();
+//     let userArr1 = [];
+//     for (const user of usersWithAddress) {
+//         if (!user.status) {
+//             userArr1.push(user);
+//         }
+//     }
+//     usersWithAddress = userArr1;
+//     console.log(usersWithAddress);
+//     for (const user of usersWithAddress) {
+//         console.log(user);
+//         let div = document.createElement('div');
+//         document.body.appendChild(div);
+//         div.innerText = (`${user.id} ${user.name} ${user.age} ${user.status} ${user.address.city} ${user.address.street}
+//          ${user.address.number}`);
+//     }
+// };
+//
+// checkbox2.onclick = function (ev) {
+//     ev.preventDefault();
+//     let userArr2 = [];
+//     for (const user of usersWithAddress) {
+//         if (user.age>=29) {
+//             userArr2.push(user);
+//         }
+//     }
+//     usersWithAddress = userArr2;
+//     for (const user of usersWithAddress) {
+//         console.log(user)
+//         let div = document.createElement('div');
+//         document.body.appendChild(div);
+//         div.innerText = (`${user.id} ${user.name} ${user.age} ${user.status} ${user.address.city} ${user.address.street}
+//          ${user.address.number}`);
+//     }
+// };
+//
+// checkbox3.onclick = function (ev) {
+//     ev.preventDefault();
+//     let userArr3 = [];
+//     for (const user of usersWithAddress) {
+//         if (user.address.city==='Kyiv') {
+//             userArr3.push(user);
+//         }
+//     }
+//     usersWithAddress = userArr3;
+//     console.log(usersWithAddress);
+//     for (const user of usersWithAddress) {
+//         console.log(user)
+//         let div = document.createElement('div');
+//         document.body.appendChild(div);
+//         div.innerText = (`${user.id} ${user.name} ${user.age} ${user.status} ${user.address.city} ${user.address.street}
+//          ${user.address.number}`);
+//     }
+// };
+
+
+
+//Завдання 4
+// *****(Прям овердоз с рекурсией) Создать функцию которая принимает какой-либо элемент DOM-структуры .Функция
+// создает в боди 2 кнопки (назад/вперед)
+// при нажатии вперед, вы переходите к дочернему элементу, при еще одном нажатии на "вперед", вы переходите к
+// следующему дочернему элементу (лежащему на одном уровне)
+// НО если у (какого-либо)дочеренего элемента есть дети, то нажатие "вперед" позволяет нам войти внутрь элемента и
+// выводит первого ребенка. и тд.
+//         Когда все дети заканчиваются, мы выходим из данного дочернего элемента и переходим к следующему, лежащему
+//         с ним на одном уровне
+
+
+
+// Завдання 5
+// - Напишите «Карусель» – ленту изображений, которую можно листать влево-вправо нажатием на стрелочки.
+// * этот код помечает картинки, для удобства разработки */
+
+
+
+
+let prev = document.getElementsByClassName('prev');
+let next = document.getElementsByClassName('next');
+let images = document.getElementsByTagName('img');
+images[0].style.display = 'flex';
+i = 1;
+j = 0;
+prev[0].onclick=function () {
+    images[i].style.display = 'flex';
+    images[j].style.display = 'none';
+    i++;
+    j++;
+    }
+q = 4;
+g = 3;
+next[0].onclick=function () {
+    images[q].style.display = 'none';
+    images[g].style.display = 'flex';
+    q--;
+    g--;
+}
+
+
+
+//         Завдання важке для розуміння, але дуже легке в реалізації. Тут треба буде погуглити
+// *** При виділені сегменту тексту на сторінці він стає жирний/курсивний/або якось іншим способом змінює свій стан
+// document.body.onclick = function (e) {
+//     e.target.style.fontSize = '50px';
+// };
+
+
 </script>
 </body>
 </html>
