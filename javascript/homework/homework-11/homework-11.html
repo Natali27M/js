@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // -створити форму з інпутами для name та age.
+    //         При відправці форми записати об'єкт в localstorage
+    let form = document.createElement('form');
+    let inputName = document.createElement('input');
+    inputName.setAttribute('type', 'string');
+    let labelName = document.createElement('label');
+    labelName.innerText = 'Введіть ім*я';
+    let inputAge = document.createElement('input');
+    inputAge.setAttribute('type', 'number');
+    let labelAge = document.createElement('label');
+    labelAge.innerText = 'Введіть вік';
+    let button = document.createElement('button');
+    button.innerText = 'Пуск';
+
+    document.body.appendChild(form);
+    form.appendChild(labelName);
+    labelName.appendChild(inputName);
+    form.appendChild(labelAge);
+    labelAge.appendChild(inputAge);
+    form.appendChild(button);
+    let key1 = 'key';
+    let result = (userName, userAge) => {
+      let user = {
+        inputName: userName,
+        inputAge: userAge
+      };
+      localStorage.setItem('key1', JSON.stringify(user));
+    };
+
+    button.onclick = function () {
+      result(inputName.value, inputAge.value);
+    };
+
+
+
+    // -створити форму з інпутами для model,type та volume автівки.
+    //         при відпарвці форми об'єкти зберігаються в масиві в локальному сховищі.
+    // let form = document.createElement('form');
+    // let inputModel = document.createElement('input');
+    // let labelModel = document.createElement('label');
+    // labelModel.innerText = 'Марка авто';
+    // let inputType = document.createElement('input');
+    // let labelType = document.createElement('label');
+    // labelType.innerText = 'Модель авто';
+    // let inputVolume = document.createElement('input');
+    // let labelVolume = document.createElement('label');
+    // labelVolume.innerText = 'Обє*м двигуна';
+    // let button = document.createElement('button');
+    // button.innerText = 'Пуск';
+    //
+    // document.body.appendChild(form);
+    // form.appendChild(labelModel);
+    // labelModel.appendChild(inputModel);
+    // form.appendChild(labelType);
+    // labelType.appendChild(inputType);
+    // form.appendChild(labelVolume);
+    // labelVolume.appendChild(inputVolume);
+    // form.appendChild(button);
+    //
+    // let key2 ='key2';
+    //
+    // let cars = function (model, type, volume) {
+    //     let car = JSON.parse(localStorage.getItem(key2)) || [];
+    //     car.push({model, type, volume});
+    //     localStorage.setItem(key2, JSON.stringify(car));
+    // };
+    // button.onclick = function () {
+    //     cars(inputModel.value, inputType.value, inputVolume.value);
+    // };
+
+</script>
+</body>
+</html>

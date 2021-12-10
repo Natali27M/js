@@ -12,15 +12,16 @@ function card(key) {
            }
            // this.historyLog.push(this.receivedCredit)
        }
+       return getCardOptions();
    }
 
-   return getCardOptions;
+  return card()
 }
 
-card().getCardOptins;
- let card1 = card(1);
+
+ let card1 = card()
  console.log(card1);
- card1().
+ // card1().
 
 // function card(key,balance,limit) {
 //     this.balance = balance;
