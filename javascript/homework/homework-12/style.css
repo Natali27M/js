@@ -1,33 +1,33 @@
 /*Завдання 1*/
 
-#wrap {
-    width: 100%;
-    height: auto;
-    display: flex;
-    flex-wrap: wrap;
-}
-.post {
-    width: 18%;
-    height: auto;
-    padding: 5px;
-    border: 1px solid silver;
-}
-.userId {
-    margin-bottom: 10px;
-}
-.header {
-    height: 90px;
-}
+/*#wrap {*/
+/*    width: 100%;*/
+/*    height: auto;*/
+/*    display: flex;*/
+/*    flex-wrap: wrap;*/
+/*}*/
+/*.post {*/
+/*    width: 18%;*/
+/*    height: auto;*/
+/*    padding: 5px;*/
+/*    border: 1px solid silver;*/
+/*}*/
+/*.userId {*/
+/*    margin-bottom: 10px;*/
+/*}*/
+/*.header {*/
+/*    height: 90px;*/
+/*}*/
 
 
 
 /*Завдання 2*/
 
-/*#wrap {*/
-/*    width: 100%;*/
-/*    height: auto;*/
-/*}*/
-/*.comment {*/
-/*    padding: 5px;*/
-/*    border-bottom: 1px solid silver;*/
-/*}*/
+#wrap {
+    width: 100%;
+    height: auto;
+}
+.comment {
+    padding: 5px;
+    border-bottom: 1px solid silver;
+}

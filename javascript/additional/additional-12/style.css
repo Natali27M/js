@@ -1,0 +1,27 @@
+#wrap {
+    width: 100%;
+}
+.description {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.field {
+    display: flex;
+    width: 100%;
+    margin-bottom: 10px;
+}
+.w15 {
+    width: 15%;
+}
+.w80 {
+    width: 80%;
+}
+.backgroundBlue {
+    background: lightskyblue;
+}
+.btn {
+    width: 200px;
+    height: 40px;
+
+}
