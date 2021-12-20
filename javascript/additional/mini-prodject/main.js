@@ -7,30 +7,34 @@ let wrap = document.getElementById('wrap');
 let key = 'users';
 fetch('https://jsonplaceholder.typicode.com/users')
     .then(response => response.json())
-    .then(users=>{
-        for (const user of users) {
-            let divUser = document.createElement('div');
-            let divUserId = document.createElement('div');
-            divUserId.innerText = `${user.id}`;
-            let divUserName = document.createElement('div');
-            divUserName.innerText = `${user.name}`;
-            let buttonUserInfo = document.createElement('button');
-            buttonUserInfo.innerText = 'User information';
-            buttonUserInfo.onclick=function (e) {
-                e.preventDefault();
-                let userInfo = JSON.parse(localStorage.getItem('user')) || [];
-                userInfo.push({user});
-                localStorage.setItem(key, JSON.stringify(userInfo));
-                document.location.href = 'user-details.html';
-
+    .then(users => {
+            for (const user of users) {
+                let divUserWrap = document.createElement('div');
+                divUserWrap.classList.add('divUserWrap', 'hAuto', 'display', 'justify', 'align', 'backgroundPlum');
+                let divUser = document.createElement('div');
+                divUser.classList.add('divUser', 'display', 'align');
+                let divUserId = document.createElement('div');
+                divUserId.classList.add('divUserId', 'border1', 'backgroundWhite', 'w40', 'marginY5', 'text');
+                divUserId.innerText = `User id - ${user.id}`;
+                let divUserName = document.createElement('div');
+                divUserName.classList.add('divUserName', 'text', 'border1', 'backgroundWhite', 'w90', 'marginY5');
+                divUserName.innerText = `${user.name}`;
+                let buttonUserInfo = document.createElement('button');
+                buttonUserInfo.classList.add('backgroundPlum', 'w80', 'marginY5');
+                buttonUserInfo.innerText = 'User information';
+                buttonUserInfo.onclick = function (e) {
+                    e.preventDefault();
+                    let userInfo = JSON.parse(localStorage.getItem('user')) || [];
+                    userInfo.push({user});
+                    localStorage.setItem(key, JSON.stringify(userInfo));
+                    document.location.href = 'user-details.html';
+                }
+                divUser.append(divUserId, divUserName, buttonUserInfo);
+                divUserWrap.appendChild(divUser);
+                wrap.appendChild(divUserWrap);
             }
-
-            divUser.append(divUserId,divUserName,buttonUserInfo);
-            wrap.appendChild(divUser);
-
         }
-        }
-    )
+    );
 
 
 //
@@ -39,11 +43,7 @@ fetch('https://jsonplaceholder.typicode.com/users')
 // 8 Ниже информации про пост, вывести все комментарии текущего поста (эндпоинт для получения информации -
 // https://jsonplaceholder.typicode.com/posts/POST_ID/comments)
 //
-// Стилизация проекта -
-// index.html - все блоки с user - по 2 в ряд. кнопки/ссылки находяться под информацией про user.
-// user-details.html - блок с информацией про user вверху страницы. Кнопка ниже, на 90% ширины страницы, по центру.
-// блоки с краткой информацией про post - в ряд по 5 объектов.
-// post-details.html - блок с информацией про пост вверху. Комментарии - по 4 в ряд.
+
 // Все без исключения элементы, который характеризируют user,post,comment  визуализировать, так, что бы было видно их
 // блоки (дать задний фон + margin. Иными словами - крайне четкая сетка)
 
