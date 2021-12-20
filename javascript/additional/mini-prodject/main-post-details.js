@@ -19,13 +19,17 @@ for (const post of posts) {
     let buttonComments = document.createElement('button');
     buttonComments.classList.add('w80', 'backgroundPlum', 'marginY5');
     buttonComments.innerText = 'All comments';
-    let commentsWrap = document.createElement('div');
-    commentsWrap.classList.add('commentsWrap', 'display', 'w80', 'backgroundPlum', 'border');
     buttonComments.onclick=function (e) {
         e.preventDefault();
         fetch('https://jsonplaceholder.typicode.com/posts/' + post.post.id + '/comments')
             .then(response => response.json())
             .then(comments=>{
+                let commentsWrap = document.getElementsByClassName('commentsWrap');
+                if (commentsWrap.length > 0) {
+                    commentsWrap[0].remove();
+                }
+                commentsWrap = document.createElement('div');
+                commentsWrap.classList.add('comments','commentsWrap', 'display', 'w80', 'backgroundPlum', 'border');
                 for (const comment of comments) {
                     let divComment = document.createElement('div');
                     divComment.classList.add('divComment', 'w50', 'border');
@@ -46,18 +50,13 @@ for (const post of posts) {
                     divCommentBody.classList.add('commentBody', 'backgroundSilver', 'commentBody', 'border', 'text',
                         'margin2');
                     divCommentBody.innerText = comment.body;
-
                     divComment.append(divCommentPostId, divCommentId, divCommentName, divCommentEmail, divCommentBody);
                     commentsWrap.appendChild(divComment);
-                    
+                    divPost.appendChild(commentsWrap);
                 }
             })
-
     }
-
-    divPost.append(postUserId, postId, postTitle, postBody, buttonComments, commentsWrap);
+    divPost.append(postUserId, postId, postTitle, postBody, buttonComments);
 }
-
-
 divWrap.appendChild(divPost);
 document.body.appendChild(divWrap);

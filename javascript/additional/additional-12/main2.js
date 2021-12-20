@@ -21,7 +21,6 @@ const show = () => {
         let buttonGood = document.createElement('button');
         buttonGood.classList.add('btn');
         buttonGood.innerText = 'Видалити цей товар';
-
         buttonGood.onclick = function () {
             let arr = JSON.parse(localStorage.getItem('good'));
             let index = arr.findIndex(value => value.id === good.id);
